@@ -78,6 +78,116 @@ public class Main {
     La relación entre clases y objetos es esencial en la POO: las clases son el diseño conceptual y los objetos son las instancias
     que hacen tangible ese diseño. Gracias a esta relación, los sistemas pueden ser más organizados, escalables y fáciles de mantener.
   </p>
+  <h2>🔹 Solución al Ejercicio</h2>
+  <p>explicamos paso a paso la solucion del Ejercicio: <br>
+    paso 1: definimos la clase y atributos <br>
+   <div class = "code-block"> <pre>
+    <h3 class ="code-title">Java</h3>
+      class Estudiante {
+    String nombre;
+    int edad;
+    String carrera;
+    </pre></div><br>
+    paso 2: definimos el constructor <br>
+    <div class = "code-block"> <pre>
+        <h3 class ="code-title">Java</h3>
+          Estudiante(String nombre, int edad, String carrera) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.carrera = carrera;
+    }
+    </pre></div><br> 
+    paso 3: el metodo para mostrar la informacion <br>
+    <div class = "code-block"> <pre>
+        <h3 class ="code-title">Java</h3>
+          void mostrarInfo() {
+        System.out.println("Nombre: " + nombre +
+                           ", Edad: " + edad +
+                           ", Carrera: " + carrera);
+    }
+    </pre></div><br>
+    paso 4: metodo adicional (mayor de edad) <br>
+    <div class = "code-block"> <pre>
+        <h3 class ="code-title">Java</h3>
+          boolean esMayorDeEdad() {
+        return edad >= 18;
+    }
+}
+    </pre></div>
+    paso 5: clase principal y creacion de objetos <br>
+    <div class = "code-block"> <pre>
+        <h3 class ="code-title">Java</h3>
+      public class Main {
+    public static void main(String[] args) {
+        Estudiante est1 = new Estudiante("Ana Pérez", 20, "Ingeniería");
+        Estudiante est2 = new Estudiante("Luis Gómez", 17, "Medicina");
+
+        est1.mostrarInfo();
+        System.out.println("¿Es mayor de edad? " + est1.esMayorDeEdad());
+
+        est2.mostrarInfo();
+        System.out.println("¿Es mayor de edad? " + est2.esMayorDeEdad());
+    }
+}
+    </pre></div><br>
+    codigo completo: <br>
+    <div class = "code-block"> <pre>
+        <h3 class ="code-title">Java</h3>
+      // Definición de la clase Estudiante
+class Estudiante {
+    // Atributos de la clase (propiedades de cada estudiante)
+    String nombre;
+    int edad;
+    String carrera;
+
+    // Constructor: se ejecuta al crear un nuevo objeto Estudiante
+    // Recibe parámetros y asigna valores a los atributos usando 'this'
+    Estudiante(String nombre, int edad, String carrera) {
+        this.nombre = nombre;   // 'this.nombre' se refiere al atributo de la clase
+        this.edad = edad;       // 'edad' es el parámetro, 'this.edad' es el atributo
+        this.carrera = carrera; // asignamos el valor recibido al atributo
+    }
+
+    // Método para mostrar la información del estudiante
+    void mostrarInfo() {
+        System.out.println("Nombre: " + nombre +
+                           ", Edad: " + edad +
+                           ", Carrera: " + carrera);
+    }
+
+    // Método adicional: verifica si el estudiante es mayor de edad
+    boolean esMayorDeEdad() {
+        return edad >= 18; // devuelve true si edad >= 18, false en caso contrario
+    }
+}
+
+// Clase principal donde se ejecuta el programa
+public class Main {
+    public static void main(String[] args) {
+        // Creamos dos objetos de tipo Estudiante usando 'new'
+        Estudiante est1 = new Estudiante("Ana Pérez", 20, "Ingeniería");
+        Estudiante est2 = new Estudiante("Luis Gómez", 17, "Medicina");
+
+        // Mostramos la información del primer estudiante
+        est1.mostrarInfo();
+        // Llamamos al método esMayorDeEdad() para verificar si es mayor de edad
+        System.out.println("¿Es mayor de edad? " + est1.esMayorDeEdad());
+
+        // Mostramos la información del segundo estudiante
+        est2.mostrarInfo();
+        // Verificamos si el segundo estudiante es mayor de edad
+        System.out.println("¿Es mayor de edad? " + est2.esMayorDeEdad());
+    }
+}
+    </pre> </div><br>
+    resultado a esperar al ejecutar el codigo: <br>
+    <code>
+      Nombre: Ana Pérez, Edad: 20, Carrera: Ingeniería
+¿Es mayor de edad? true
+Nombre: Luis Gómez, Edad: 17, Carrera: Medicina
+¿Es mayor de edad? false
+    </code>
+  </p>
     </div>
 </body>
 </html>
