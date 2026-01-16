@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1: Relación entre clases y objetos en un sistema</title>
+    <link rel="stylesheet" href="clase1.css">
+</head>
+<body>
+    <h1>Clase 1: Relación entre clases y objetos en un sistema</h1>
+    <div class ="caja">
+        <h2>Introduccion</h2>
+        <p>
+    En la programación orientada a objetos (POO), las <strong>clases</strong> y los <strong>objetos</strong> son los pilares fundamentales.
+    Una clase es un molde o plantilla que define atributos y métodos, mientras que un objeto es una instancia concreta de esa clase.
+  </p>
+ <h2>🔹 Ejemplo</h2>
+  <div class="code-block">
+    <pre>
+        <h3 class ="code-title">Java</h3>
+class Libro {
+    String titulo;
+    String autor;
+    int paginas;
+
+    // Constructor
+    Libro(String titulo, String autor, int paginas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.paginas = paginas;
+    }
+
+    // Método
+    void mostrarInfo() {
+        System.out.println("Título: " + titulo + 
+                           ", Autor: " + autor + 
+                           ", Páginas: " + paginas);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 471);
+        Libro libro2 = new Libro("El Principito", "Antoine de Saint-Exupéry", 96);
+
+        libro1.mostrarInfo();
+        libro2.mostrarInfo();
+    }
+}
+    </pre>
+  </div>
+ <h2>🔹 Explicación</h2>
+  <p>
+    La clase es abstracta y no ocupa memoria hasta que se crea un objeto. El objeto es tangible dentro del programa,
+    ocupa memoria y puede interactuar con otros. La relación es de <em>molde → producto</em>: la clase es el diseño,
+    el objeto es la construcción.
+  </p>
+   <h2>🔍 Explicación adicional</h2>
+  <p>
+    <strong>this</strong>: es una palabra clave en Java que hace referencia al objeto actual.  
+    Dentro del constructor, <code>this.titulo</code> se refiere al atributo de la clase, mientras que <code>titulo</code> (sin this) es el parámetro recibido.  
+    Esto evita confusiones y asegura que el valor del parámetro se asigne correctamente al atributo del objeto.
+  </p>
+  <p>
+    <strong>new Libro(...)</strong>: la palabra clave <code>new</code> crea una nueva instancia de la clase <code>Libro</code>.  
+    Cada vez que usamos <code>new Libro("texto", "autor", páginas)</code>, se reserva memoria y se ejecuta el constructor para inicializar los atributos.  
+    Así obtenemos un objeto único con sus propios valores, independiente de otros objetos de la misma clase.
+  </p>
+  <h2>🔹 Ejercicio a resolver</h2>
+  <p>
+    Crea una clase llamada <code>Estudiante</code> con atributos <code>nombre</code>, <code>edad</code> y <code>carrera</code>.
+    Define un constructor, crea dos objetos y muestra su información con un método <code>mostrarInfo()</code>.
+    <br>👉 Reto adicional: agrega un método que calcule si el estudiante es mayor de edad.
+  </p>
+
+  <h2>🔹 Conclusión</h2>
+  <p>
+    La relación entre clases y objetos es esencial en la POO: las clases son el diseño conceptual y los objetos son las instancias
+    que hacen tangible ese diseño. Gracias a esta relación, los sistemas pueden ser más organizados, escalables y fáciles de mantener.
+  </p>
+    </div>
+</body>
+</html>
