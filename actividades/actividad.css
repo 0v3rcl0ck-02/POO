@@ -1,0 +1,55 @@
+﻿body{
+    background: radial-gradient(circle at top right, #00c6ff, #0072ff, #001f3f);
+}
+h1{
+    color: darkblue;
+    text-align: center;
+}
+h2{
+    color: darkgreen;
+}
+.caja{
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: darkblue;
+    background: radial-gradient(ellipse at bottom right, rgba(0, 0, 139, 0.55),
+    rgba(173, 216, 230, 0.55));
+}   
+.code-block {
+    position: relative;
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      color: #fff;
+      font-family: Consolas, monospace;
+      background: radial-gradient(
+        ellipse at bottom right,
+        rgba(255, 255, 255, 0.55),   /* estrellas translúcidas */
+        rgba(106, 17, 203, 0.55),    /* violeta galáctico */
+        rgba(0, 0, 0, 0.55)          /* espacio oscuro */
+      );
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      overflow-x: auto;
+    }
+.code-title {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      margin: 0;
+      font-size: 0.9em;
+      color: #ffcc70;
+      font-family: Arial, sans-serif;
+      background: rgba(0,0,0,0.4);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    pre {
+      margin: 0;
+      padding-top: 25px; /* espacio para que el título no se superponga */
+    }
+code{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}

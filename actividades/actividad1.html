@@ -3,13 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 1: Diagrama de clases</title>
-    <link rel="stylesheet" href="../main.css">
+    <title>Actividad 1: Ejercicio Estudiantes</title>
+    <link rel="stylesheet" href="actividad.css">
 </head>
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
-    <h1>Actividad 1: Diagrama de clases</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relación entre diferentes clases en un sistema de gestión de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <h1>Actividad 1: Ejercicio Estudiantes</h1>
+    <div class="caja">
+        <p>En este primer ejercicio se vera el paso a paso de la elaboracion de un codigo java POO,
+            el cual se basara en la creacion de una clase estudiante, con sus atributos y metodos, 
+            ademas de la creacion de objetos a partir de esta clase.</p>
+            <h2>codigo completo</h2>
+        <div class="code.block">
+            <pre>
+                <h3 class="code title">Java</h3>
+                //importamos las librerias necesarias para la evaluacion
+import java.util.ArrayList;
+import java.util.Scanner;
+//creamos la clase estudiante con los atributos solicitados
+class estudiante {
+	private String nombre;
+	private int edad;
+	private double nota;
+	private String paralelo;
+
+	//adicionamos un constructor vacio de la clase
+
+	public estudiante() {}
+
+	//metodo generico para el ingreso de datos
+
+	public static String ingresodatos(Scanner sc, String mensaje) {
+		System.out.println(mensaje);
+		return sc.nextLine();
+	}
+	//funcion para definir datos (set)
+	public void ingresodatos(Scanner sc) {
+		this.nombre= ingresodatos(sc, "ingresa nombre: ");
+		this.edad = Integer.parseInt(ingresodatos(sc, "ingresa edad: "));
+		this.nota = Double.parseDouble(ingresodatos(sc, "ingresa nota: "));
+		this.paralelo = ingresodatos(sc, "ingresa paralelo (A/B): ").toUpperCase();
+	}
+	//parte para obtener los datos (getters)
+	public int getedad() {
+		return edad;
+	}
+	public double getnota() {
+		return nota;
+	}
+	public String getparalelo() {
+		return paralelo;
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<estudiante> estudiantes = new ArrayList<>();
+		//la parte de abajo del codigo nos solicitara
+		//cuantos estudiantes queremos ingresar.
+		System.out.println("cuantos estudiantes desea registrar: ");
+		int n = Integer.parseInt(sc.nextLine());
+		for (int i = 0; i <n ; i++) {
+			System.out.println("\n--- Estudiante " + (i+1) + "---");
+			estudiante e = new estudiante();
+			e.ingresodatos(sc);
+			//habia un error con una s aqui por eso marcaba error y no dejaba ejecutar
+			estudiantes.add(e);
+		}
+		int opcion;
+		do {
+			System.out.println("\n=== MENU ===");
+			System.out.println("1. mostrar cantidad de estudiantes mayores a 25.");
+			System.out.println("2. mostrar cantidad de estudiantes que aprueban el semestre.");
+			System.out.println("3. mostrar cantidad de estudiantes que reprueben el semestre.");
+			System.out.println("4. mostrar cantidad de estudiantes en el paralelo A y B.");
+			System.out.println("5. salir.");
+			System.out.println("seleccione una opcion: ");
+			opcion = Integer.parseInt(sc.nextLine());
+
+			switch (opcion) {
+			case 1:
+				long mayores25 = estudiantes.stream()
+				                 .filter(e-> e.getedad()>25)
+				                 .count();
+				System.out.println("cantidad de estudiantes mayores a 25 aC1os: " + mayores25);
+				break;
+			case 2:
+				long aprueban = estudiantes.stream()
+				                .filter (e-> e.getnota()>=7)
+				                .count();
+				System.out.println("cantidad de estudiantes que aprueban el semestre: " + aprueban);
+				break;
+			case 3:
+				long reprueban = estudiantes.stream()
+				                 .filter (e-> e.getnota()<7)
+				                 .count();
+				System.out.println("cantidad de estudiantes que reprueban el semestre: " + reprueban);
+				break;
+			case 4:
+				long paraleloA = estudiantes.stream()
+				                 .filter (e-> e.getparalelo().equals("A"))
+				                 .count();
+				System.out.println("estudiantes que estan en el paralelo A: " + paraleloA);
+				long paraleloB = estudiantes.stream()
+				                 .filter (e-> e.getparalelo().equals("B"))
+				                 .count();
+				System.out.println("estudiantes que estan en el paralelo B: " + paraleloB);
+				break;
+			case 5:
+				System.out.println("saliendo del sistema...");
+				break;
+			default :
+				System.out.println("opcion invalida. Intenta de nuevo.");
+			}
+		} while (opcion != 5);
+		sc.close();
+	}
+}</pre></div>
+<h2>explicacion</h2>
+<p>
+    Este código implementa un sistema de gestión de estudiantes utilizando programación 
+    orientada a objetos en Java. Se define una clase `estudiante` con atributos como nombre, 
+    edad, nota y paralelo, junto con métodos para ingresar y obtener estos datos. <br>
+    adicional en las importaciones notamos que hay dos librerias importadas,
+    una es la arraylist la que nos permitira hacer listas de objetos
+    mientras que la otra es la scanner, la cual nos pertmitida ingresar datos nosotros. <br>
+    
+</p>
+</div>
 </body>
 </html>
