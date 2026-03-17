@@ -7,21 +7,6 @@ body {
     padding: 0;
 }
 
-/* Encabezados */
-h1 {
-    color: #ffcc70;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2.2em;
-}
-
-h2 {
-    color: #00ff99;
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.5em;
-}
-
 /* Botón volver */
 button {
     background-color: #003366;
@@ -36,6 +21,19 @@ button {
 }
 button:hover {
     background-color: #0055aa;
+}
+
+/* Encabezados */
+h1 {
+    color: #ffcc70;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
+h2 {
+    color: #00ff99;
+    text-align: center;
+    margin-top: 15px;
 }
 
 /* Tarjetas de contenido */
@@ -55,27 +53,50 @@ button:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,0.6);
 }
 
-/* Lista de actividades */
-ul {
-    list-style: none;
-    padding: 0;
+/* Bloques de código */
+.code-block {
+    position: relative;
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-family: Consolas, monospace;
+    background: radial-gradient(
+        ellipse at bottom right,
+        rgba(255, 255, 255, 0.15),
+        rgba(106, 17, 203, 0.55),
+        rgba(0, 0, 0, 0.85)
+    );
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    overflow-x: auto;
 }
-ul li {
-    margin: 10px 0;
+.code-block pre {
+    margin: 0;
+    padding-top: 25px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    white-space: pre-wrap; /* permite que el código se ajuste en pantallas pequeñas */
 }
-ul li a {
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: rgba(255,255,255,0.1);
+.code-title {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    margin: 0;
+    font-size: 0.9em;
     color: #ffcc70;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: Arial, sans-serif;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 8px;
+    border-radius: 6px;
 }
-ul li a:hover {
-    background-color: #00ff99;
-    color: #001f3f;
+
+/* Código inline */
+code {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #ffcc70;
 }
 
 /* Responsive */
@@ -88,8 +109,8 @@ ul li a:hover {
         width: 100%;
         margin: 10px 0;
     }
-    ul li a {
-        font-size: 0.9em;
-        padding: 8px;
+    .code-block {
+        width: 100%;
+        padding: 15px;
     }
 }

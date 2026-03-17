@@ -1,9 +1,10 @@
 /* Estilo general */
 html {
-  background-color: #f0f6ff;
+  background: radial-gradient(circle at center, #ffffff, #00ffff, #00bfa5);
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: #333;
   margin: 0;
+  padding: 0;
 }
 
 /* Encabezado */
@@ -12,6 +13,9 @@ header {
   color: white;
   padding: 15px;
   text-align: center;
+  position: sticky; /* menú fijo arriba */
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
@@ -36,29 +40,55 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffcc00;
+  color: #ffcc70;
 }
 
-/* Tarjetas (caja) */
+/* Tarjetas de contenido */
 .caja {
-  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
   margin: 20px auto;
   padding: 20px;
-  border-radius: 12px;
-  background-color: #ffffffcc;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .caja:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
 }
 
 h2 {
   text-align: center;
-  color: #003366;
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+/* Listas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li a {
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.1);
+  color: #ffcc70;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li a:hover {
+  background-color: #00ff99;
+  color: #001f3f;
 }
 
 /* Pie de página */
@@ -79,5 +109,9 @@ footer {
   .caja {
     margin: 10px;
     padding: 15px;
+  }
+  ul li a {
+    font-size: 0.9em;
+    padding: 8px;
   }
 }
