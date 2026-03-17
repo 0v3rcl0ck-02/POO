@@ -9,7 +9,77 @@
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
     <h1>Actividad 4: Ejercicio Bucles</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relaciÃ³n entre diferentes clases en un sistema de gestiÃ³n de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <div class="caja">
+        <p>En este cuarto ejercicio de la elaboracion de un codigo java POO, <br>
+            el cual se basara en la creacion de una clase bucles, con sus atributos y metodos, <br>
+            ademas de la creacion de objetos a partir de esta clase. <br>
+        </p>
+        <h2>Código completo</h2>
+        <div class="code-block">
+            <pre>
+                <h3 class="code-title">Java</h3>
+                import java.util.Scanner;
+
+public class EjerciciosBucles {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 1. Imprimir números del 1 al N
+        System.out.print("Ingrese un número N para imprimir del 1 al N: ");
+        int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i);
+        }
+
+        // 2. Sumar los primeros M números naturales
+        System.out.print("\nIngrese un número M para sumar los primeros M números: ");
+        int m = sc.nextInt();
+        int suma = 0;
+        for (int i = 1; i <= m; i++) {
+            suma += i;
+        }
+        System.out.println("La suma de los primeros " + m + " números es: " + suma);
+
+        // 3. Tabla de multiplicar de un número
+        System.out.print("\nIngrese un número para mostrar su tabla de multiplicar: ");
+        int numeroTabla = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numeroTabla + " x " + i + " = " + (numeroTabla * i));
+        }
+
+        // 4. Contar números pares hasta un límite
+        System.out.print("\nIngrese un número límite para contar pares: ");
+        int limite = sc.nextInt();
+        int contador = 0;
+        for (int i = 1; i <= limite; i++) {
+            if (i % 2 == 0) {
+                contador++;
+            }
+        }
+        System.out.println("Cantidad de números pares entre 1 y " + limite + ": " + contador);
+
+        // 5. Factorial de un número
+        System.out.print("\nIngrese un número para calcular su factorial: ");
+        int numeroFactorial = sc.nextInt();
+        int factorial = 1;
+        for (int i = 1; i <= numeroFactorial; i++) {
+            factorial *= i;
+        }
+        System.out.println("El factorial de " + numeroFactorial + " es: " + factorial);
+
+        sc.close();
+    }
+}
+            </pre>
+        </div>
+        <h2>Explicación</h2>
+        <p>
+            En esta actividad se han implementado varios ejercicios utilizando bucles en Java. <br>
+            Se han creado funciones que permiten imprimir números, sumar valores, mostrar tablas de multiplicar, contar números pares y calcular factoriales. <br>
+            Cada ejercicio utiliza un bucle for para realizar las operaciones necesarias. <br>
+            adicional la importacion se scanner que se usa para ingresar los datos por teclado, <br>
+            permitiendo al usuario interactuar con el programa y obtener resultados personalizados según sus entradas. <br>
+        </p>
+    </div>
 </body>
 </html>

@@ -9,7 +9,102 @@
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
     <h1>Actividad 6: Ejercicio Interfaz</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relaciÃ³n entre diferentes clases en un sistema de gestiÃ³n de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <div class="caja">
+    <p> en esta actividad presentare una interfaz llamada operaciones, que funcionara como una calculadora basica</p>
+    <h2>Código completo</h2>
+    <div class="code-block">
+        <pre>
+            <h3 class="code-title">Java</h3>
+         import java.util.Scanner;
+interface Operacion {
+	int suma();
+	int resta();
+	int multiplicacion();
+	double division();
+}
+
+abstract class Matematica implements Operacion {
+	int num1;
+	int num2;
+
+	public Matematica (int num1,int num2) {
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+}
+class Operaciones extends Matematica {
+	public Operaciones(int num1, int num2) {
+		super(num1, num2);
+	}
+
+	public int suma() {
+		return num1+num2;
+	}
+
+	public int resta() {
+		return num1-num2;
+	}
+	public int multiplicacion() {
+		return num1*num2;
+	}
+	public double division() {
+		return (double) num1/num2;
+	}
+	public static String ingresovalores(Scanner sc, String mensaje) {
+		System.out.println(mensaje);
+		return sc.nextLine();
+	}
+	public void Ingresonumeros (Scanner sc) {
+		this.num1 = Integer.parseInt(ingresovalores(sc,"ingresa numero 1: "));
+		this.num2 = Integer.parseInt(ingresovalores(sc, "ingresa numero 2: "));
+	}
+}
+public class Main {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Operaciones op1 = new Operaciones(num1, num2);
+		op1.Ingresonumeros(sc);
+		int opcion;
+		do {
+			System.out.println("\n=== MENU ===");
+			System.out.println("1. sumar");
+			System.out.println("2. restar");
+			System.out.println("3. multiplicar");
+			System.out.println("4. dividir");
+			System.out.println("5. salir");
+			opcion=Integer.parseInt(sc.nextLine());
+			switch (opcion) {
+			case 1:
+				System.out.println("suma: " + op1.suma());
+				break;
+			case 2:
+				System.out.println("resta: " + op1.resta());
+				break;
+			case 3:
+				System.out.println("multiplicacion: " + op1.multiplicacion());
+				break;
+			case 4:
+				System.out.println("division: " + op1.division());
+				break;
+			case 5:
+				System.out.println("saliendo del sistema...");
+				break;
+			default:
+				System.out.println("opcion invalida. intenta de nuevo");
+			}
+		} while (opcion !=5);
+		sc.close();
+	}
+}
+        </pre>
+    </div>
+    <h2>Explicación</h2>
+    <p>
+        En esta actividad se ha implementado una interfaz llamada Operacion que define los métodos para realizar operaciones matemáticas básicas. <br>
+        Se ha creado una clase abstracta Matematica que implementa la interfaz y proporciona la funcionalidad común. <br>
+        Finalmente, se ha creado una clase Operaciones que extiende Matematica y proporciona la implementación concreta de los métodos. <br>
+        El programa principal permite al usuario interactuar con la calculadora, ingresando dos números y seleccionando una operación.
+    </p>
+    </div>
 </body>
 </html>

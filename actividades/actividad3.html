@@ -9,7 +9,120 @@
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
     <h1>Actividad 3: Ejercicio Funciones</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relaciÃ³n entre diferentes clases en un sistema de gestiÃ³n de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <div class="caja">
+        <p>
+            En este tercer ejercicio se vera el paso a paso de la elaboracion de un codigo java POO, <br>
+            el cual se basara en la creacion de una clase funciones, con sus atributos y metodos, <br>
+            ademas de la creacion de objetos a partir de esta clase. <br>
+        </p>
+    <h2>codigo completo</h2>
+    <div class="code-block">
+        <pre>
+            <h3 class="code-title">Java</h3>
+            import java.util.Scanner;
+
+public class MenuFunciones {
+
+    // 1. Sumar dos números
+    public static int sumar(int a, int b) {
+        return a + b;
+    }
+
+    // 2. Área de un círculo
+    public static double areaCirculo(double radio) {
+        return Math.PI * radio * radio;
+    }
+
+    // 3. Verificar si un número es par
+    public static boolean esPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    // 4. Factorial de un número
+    public static int factorial(int n) {
+        int resultado = 1;
+        for (int i = 1; i <= n; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+
+    // 5. Convertir Celsius a Fahrenheit
+    public static double celsiusAFahrenheit(double celsius) {
+        return (celsius * 9/5) + 32;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("\n--- MENÚ DE FUNCIONES ---");
+            System.out.println("1. Sumar dos números");
+            System.out.println("2. Calcular área de un círculo");
+            System.out.println("3. Verificar si un número es par");
+            System.out.println("4. Calcular factorial");
+            System.out.println("5. Convertir Celsius a Fahrenheit");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese primer número: ");
+                    int a = sc.nextInt();
+                    System.out.print("Ingrese segundo número: ");
+                    int b = sc.nextInt();
+                    System.out.println("Resultado: " + sumar(a, b));
+                    break;
+
+                case 2:
+                    System.out.print("Ingrese el radio: ");
+                    double radio = sc.nextDouble();
+                    System.out.println("Área: " + areaCirculo(radio));
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese un número: ");
+                    int num = sc.nextInt();
+                    System.out.println("¿Es par? " + esPar(num));
+                    break;
+
+                case 4:
+                    System.out.print("Ingrese un número: ");
+                    int n = sc.nextInt();
+                    System.out.println("Factorial: " + factorial(n));
+                    break;
+
+                case 5:
+                    System.out.print("Ingrese temperatura en Celsius: ");
+                    double celsius = sc.nextDouble();
+                    System.out.println("Fahrenheit: " + celsiusAFahrenheit(celsius));
+                    break;
+
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+        } while (opcion != 0);
+
+        sc.close();
+    }
+}
+        </pre></div>
+        <h2>explicacion</h2>
+        <p>
+            En esta actividad se han creado varias funciones que realizan diferentes tareas, <br>
+            como sumar dos números, calcular el área de un círculo, verificar si un número es par, <br>
+            calcular el factorial de un número y convertir temperaturas de Celsius a Fahrenheit. <br>
+            Estas funciones se han implementado dentro de una clase llamada MenuFunciones, <br>
+            y se a importado la libreria scanner para ingresar los datos por teclado. <br>
+            El programa presenta un menú al usuario para seleccionar la función que desea ejecutar, <br>
+            luego dependiendo la opcion solicitara los datos necesarios para ejecutar la función y mostrar el resultado. <br>
+        </p>
+    </div>
 </body>
 </html>

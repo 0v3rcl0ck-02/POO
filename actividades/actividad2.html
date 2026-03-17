@@ -9,7 +9,120 @@
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
     <h1>Actividad 2: Ejercicio Libro</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relaciÃ³n entre diferentes clases en un sistema de gestiÃ³n de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <div class="caja">
+        <p>En este segundo ejercicio se vera el paso a paso de la elaboracion de un codigo java POO,
+            el cual se basara en la creacion de una clase libro, con sus atributos y metodos, 
+            ademas de la creacion de objetos a partir de esta clase.</p>
+    <h2>codigo completo</h2>
+    <div class="code-block">
+        <pre>
+            <h3 class="code-title">Java</h3>
+            // importamos la libreria que nos permitira ingresar datos
+import java.util.Scanner;
+//clase libro con 3 atributos
+class libro {
+	String titulo;
+	String autor;
+	int npag;
+	// constructor de la clase libro
+	public libro(String titulo, String autor, int npag) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.npag = npag;
+		//this es una palabra clave en Java que hace
+		//referencia al objeto actual. Dentro del constructor,
+		//this.titulo se refiere al atributo de la clase,
+		//mientras que titulo (sin this) es el parametro recibido.
+		//Esto evita confusiones y asegura que el valor del parametro se
+		//asigne correctamente al atributo del objeto.
+	}
+	// metodo clase libro que se puede llamar para que 
+	//devuelva los 3 atributos del libro
+	public String mostrarinfo() {
+		return "Nombre del libro: " +
+		       titulo + "." + " autor del libro: " +
+		       autor + "." + " numero de paginas: " +
+		       npag + ".";
+	}
+	//metodo para obtener nombre del libro y autor
+	public String titautlib() {
+		return "nombre del libro: " + titulo +
+		       " nombre del autor: " + autor;
+	}
+	//metodo para obtener numero de paginas unicamente el numero de paginas
+	public int npaglib() {
+		return npag;
+	}
+	// metodo para comparar que libro tiene mayor cantidad de paginas
+	public int contadorlib( int libro1, int libro2) {
+		if (libro1 < libro2) {
+			return libro2;
+		} else {
+			return libro1;
+		}
+	}
+
+}
+
+
+public class Main
+{
+	public static Scanner sc;
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+
+		libro l1 = new libro (ingresartit(), ingresaraut(), ingresarnpag());
+		libro l2 = new libro (ingresartit(), ingresaraut(), ingresarnpag());
+		//System.out.println(l1.mostrarinfo());
+		if (l1.npag > l2.npag) {
+			System.out.println("el libro: " + l1.titulo +" tiene mas que el libro: "+ l2.titulo + ".");
+		} else if (l1.npag == l2.npag) {
+			System.out.println("ambos libros tienen misma cantidad de paginas");
+		} else {
+			System.out.println("el libro: " + l1.titulo + " tiene menos que el libro: " + l2.titulo + ".");
+		}
+		System.out.println(l1.titautlib());
+		System.out.println(l1.npaglib());
+		System.out.println(l2.titautlib());
+		System.out.println(l2.npaglib());
+		sc.close();
+	}
+	//estos atributos en static nos permiten tener el codigo mas limpio y ordenado
+	static String ingresartit() {
+		System.out.println("ingrese el titulo del libro: ");
+		String titulo = sc.nextLine();
+		return titulo;
+	}
+	static String ingresaraut() {
+		System.out.println("ingrese el autor del libro: ");
+		String autor = sc.nextLine();
+		return autor;
+	}
+	static int ingresarnpag() {
+		System.out.println("ingresa el numero de paginas del libro: ");
+		int npag = sc.nextInt();
+		sc.nextLine();
+		//limpia el salto de linea almacenado que ocasiona 
+		//un fallo al ingresar datos
+		//sin este salto de linea al intentar ingresar datos ocurre que
+		//al intentar ingresar titulo este se salte y no se 
+		//pueda ingresar un dato
+		return npag;
+	}
+
+}
+        </pre></div>
+        <h2>explicacion</h2>
+        <p>
+            en este codigo se crea una clase libro con 3 atributos, titulom autor y numero de paginas, <br>
+            ademas la importacion de la libreria scanner podemos ingresar datos por teclado, ademas con el uso de la palabra clave "this"<br>
+            evitamos confusiones a la hora de ejecutar el codigo, ya que se hace referencia al atributo del objeto y parametro a recibir <br>
+            se crean 4 metodos para la clase libro, el primero es un metodo que devuelve los 3 atributos del libro usando un return, <br>
+            el segundo solo devuelve el titulo y el autor, y el tercero retorna el numero de paginas, <br>
+            mientras que el cuarto metodo compara el numero de paginas de 2 libros y devuelve un string indicando cual libro tiene mas paginas <br>
+            o si ambos tienen la misma cantidad de paginas, en el metodo main se crean 2 objetos a partir de la clase libro, y se les asigna un valor a sus atributos usando los metodos estaticos para ingresar datos por teclado, <br>
+            luego se comparan ambos libros usando un  el bucle if else para determinar cual libro tiene mas paginas.
+        </p>
+    </div>
 </body>
 </html>

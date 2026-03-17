@@ -9,7 +9,122 @@
 <body>
     <button onclick="location.href='../main.html'">Volver al menu principal</button>
     <h1>Actividad 5: Ejercicio Condicionales</h1>
-    <p>En esta actividad se presenta un diagrama de clases que ilustra la relaciÃ³n entre diferentes clases en un sistema de gestiÃ³n de biblioteca.</p>
-    <img src="../images/diagrama_clases_biblioteca.png" alt="Diagrama de Clases de Biblioteca">
+    <div class="caja">
+        <p>en esta actividad se presentan ejercicios que utilizan estructuras de control condicional en Java.
+        </p>
+        <h2>Código completo</h2>
+        <div class="code-block">
+            <pre>
+                <h3 class="code-title">Java</h3>
+                import java.util.Scanner;
+
+public class MenuCondicionales {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int opcion;
+
+		do {
+			System.out.println("\n--- MENU DE EJERCICIOS CONDICIONALES ---");
+			System.out.println("1. Numero positivo o negativo");
+			System.out.println("2. Mayor de edad");
+			System.out.println("3. Numero par o impar");
+			System.out.println("4. Calificacion escolar");
+			System.out.println("5. Comparar dos numeros");
+			System.out.println("0. Salir");
+			System.out.print("Elige una opcion: ");
+			opcion = sc.nextInt();
+
+			switch (opcion) {
+			case 1:
+				System.out.print("Ingresa un numero: ");
+				int num = sc.nextInt();
+				if (num > 0) {
+					System.out.println("El numero es positivo");
+				} else if (num < 0) {
+					System.out.println("El numero es negativo");
+				} else {
+					System.out.println("El numero es cero");
+				}
+				break;
+
+			case 2:
+				System.out.print("Ingresa tu edad: ");
+				int edad = sc.nextInt();
+				if (edad >= 18) {
+					System.out.println("Eres mayor de edad");
+				} else {
+					System.out.println("Eres menor de edad");
+				}
+				break;
+
+			case 3:
+				System.out.print("Ingresa un numero: ");
+				int numero = sc.nextInt();
+				if (numero % 2 == 0) {
+					System.out.println("El numero es par");
+				} else {
+					System.out.println("El numero es impar");
+				}
+				break;
+
+			case 4:
+				int nota;
+				do {
+					System.out.print("Ingresa tu nota (0-10): ");
+					nota = sc.nextInt();
+
+					if (nota > 10 || nota < 0) {
+						System.out.println("Nota invalida, intenta de nuevo.");
+					}
+				} while (nota > 10 || nota < 0);
+
+				if (nota >= 9) {
+					System.out.println("Excelente");
+				} else if (nota >= 7) {
+					System.out.println("Aprobado");
+				} else {
+					System.out.println("Reprobado");
+				}
+				break;
+
+
+			case 5:
+				System.out.print("Ingresa el primer numero: ");
+				int a = sc.nextInt();
+				System.out.print("Ingresa el segundo numero: ");
+				int b = sc.nextInt();
+				if (a > b) {
+					System.out.println("El primer numero es mayor");
+				} else if (a < b) {
+					System.out.println("El segundo numero es mayor");
+				} else {
+					System.out.println("Ambos numeros son iguales");
+				}
+				break;
+
+			case 0:
+				System.out.println("Saliendo del programa...");
+				break;
+
+			default:
+				System.out.println("Opcion invalida, intenta de nuevo.");
+			}
+		} while (opcion != 0);
+
+		sc.close();
+	}
+}
+            </pre>
+        </div>
+        <h2>Explicación</h2>
+        <p>
+            En esta actividad se han implementado varios ejercicios utilizando estructuras de control condicional en Java. <br>
+            Se han creado funciones que permiten verificar si un número es positivo o negativo, determinar si una persona es mayor de edad, <br>
+            identificar si un número es par o impar, evaluar calificaciones escolares y comparar dos números. <br>
+            Cada ejercicio utiliza estructuras condicionales como if-else para realizar las operaciones necesarias. <br>
+            adicional la importacion se scanner que se usa para ingresar los datos por teclado, <br>
+            permitiendo al usuario interactuar con el programa y obtener resultados personalizados según sus entradas. <br>
+        </p>
+    </div>
 </body>
 </html>
