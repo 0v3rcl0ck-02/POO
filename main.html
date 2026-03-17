@@ -5,46 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link rel="stylesheet" href="main.css">
-    </head>
+</head>
 <body>
-    <h1>Bienvenido a la Página Principal de las clases POO</h1>
-    <div class="caja">
-        <h2>clases</h2>
-    <p>
-        aqui esta un registro de las clases impartidas por el estudiante <strong>Mosquera Carrion Jose Francisco</strong>
-    </p>
-    <ul>
-        <li>
-            <a href="clases/clase1.html">Clase 1: relacion entre clases y objetos en un sistema</a>
-        </li>
-    </ul>
-    </div>
-    <div class ="caja">
-        <h2>Actividades</h2>
-        <p>
-            aqui se encuentran las actividades realizadas por el estudiante <strong>Mosquera Carrion Jose Francisco</strong>
-        </p>
-        <ul>
-            <li>
-                <a href="actividades/actividad1.html">Actividad 1: Ejercicio Estudiantes</a><br>
-                <a href="actividades/actividad2.html">Actividad 2: Ejercicio Libro</a><br>
-                <a href="actividades/actividad3.html">Actividad 3: Ejercicio Funciones</a><br>
-                <a href="actividades/actividad4.html">Actividad 4: Ejercicio bucles</a><br>
-                <a href="actividades/actividad5.html">Actividad 5: Ejercicio condicionales</a><br>
-                <a href="actividades/actividad6.html">Actividad 6: Ejercicio interfaz</a><br>
+    <!-- Encabezado con navegación -->
+    <header>
+        <h1>Bienvenido a la Página Principal de las clases POO</h1>
+        <nav>
+            <ul>
+                <li><a href="#clases" aria-label="Ir a Clases">Clases</a></li>
+                <li><a href="#actividades" aria-label="Ir a Actividades">Actividades</a></li>
+                <li><a href="#videos" aria-label="Ir a Videos">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            </li>
-        </ul>
-    </div>
-    <div class="caja">
-        <h2>Videos</h2>
-        <p>
-            aqui estan los videos explicando tareas en clase
-        </p>
-        <ul>
-            <li>
-                <a href="https://drive.google.com/drive/u/0/folders/11owZNPrbtqxXdpJB5LA-GIOzOY40A1nI">Google drive ejercicios</a>
-            </li>
-        </ul>
-    </div>
+    <!-- Contenido principal -->
+    <main>
+        <section id="clases" class="caja">
+            <h2>Clases</h2>
+            <p>
+                Aquí está un registro de las clases impartidas por el estudiante 
+                <strong>Mosquera Carrion Jose Francisco</strong>.
+            </p>
+            <ul>
+                <li>
+                    <a href="clases/clase1.html">Clase 1: Relación entre clases y objetos en un sistema</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="actividades" class="caja">
+            <h2>Actividades</h2>
+            <p>
+                Aquí se encuentran las actividades realizadas por el estudiante 
+                <strong>Mosquera Carrion Jose Francisco</strong>.
+            </p>
+            <ul>
+                <li><a href="actividades/actividad1.html">Actividad 1: Ejercicio Estudiantes</a></li>
+                <li><a href="actividades/actividad2.html">Actividad 2: Ejercicio Libro</a></li>
+                <li><a href="actividades/actividad3.html">Actividad 3: Ejercicio Funciones</a></li>
+                <li><a href="actividades/actividad4.html">Actividad 4: Ejercicio Bucles</a></li>
+                <li><a href="actividades/actividad5.html">Actividad 5: Ejercicio Condicionales</a></li>
+                <li><a href="actividades/actividad6.html">Actividad 6: Ejercicio Interfaz</a></li>
+            </ul>
+        </section>
+
+        <section id="videos" class="caja">
+            <h2>Videos</h2>
+            <p>
+                Aquí están los videos explicando tareas en clase.
+            </p>
+            <ul>
+                <li>
+                    <a href="https://drive.google.com/drive/u/0/folders/11owZNPrbtqxXdpJB5LA-GIOzOY40A1nI" target="_blank">
+                        Google Drive Ejercicios
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 - Proyecto POO de Mosquera Carrion Jose Francisco</p>
+    </footer>
 </body>
+</html>
